@@ -1,0 +1,42 @@
+<form [formGroup]="shopItemForm">
+  <h1 mat-dialog-title>Shop item</h1>
+  <div mat-dialog-content>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Price</mat-label>
+        <input matInput formControlName="price" required>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Quantity</mat-label>
+        <input matInput formControlName="quantity">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Image</mat-label>
+        <input matInput formControlName="image" required>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Donated</mat-label>
+        <mat-select formControlName="donated" required>
+          <mat-option [value]="true">True</mat-option>
+          <mat-option [value]="false">False</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button color="primary" (click)="onSubmit()" [disabled]="shopItemForm.invalid">Save</button>
+    <button mat-button color="primary" (click)="onNoClick()">Cancel</button>
+  </div>
+</form>

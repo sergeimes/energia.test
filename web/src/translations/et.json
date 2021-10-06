@@ -1,0 +1,23 @@
+{
+  "language": {
+    "en": "English",
+    "et": "Estonian",
+    "ru": "Russian"
+  },
+  "currency": {
+    "EUR500": "500 €",
+    "EUR100": "100 €",
+    "EUR50": "50 €",
+    "EUR20": "20 €",
+    "EUR10": "10 €",
+    "EUR5": "5 €",
+    "EUR2": "2 €",
+    "EUR1": "1 €",
+    "CENT50": "50 cents",
+    "CENT20": "20 cents",
+    "CENT10": "10 cents",
+    "CENT5": "5 cents",
+    "CENT2": "2 cents",
+    "CENT1": "1 cents"
+  }
+}

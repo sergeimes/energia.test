@@ -1,0 +1,23 @@
+<form [formGroup]="checkoutForm">
+  <h1 mat-dialog-title>Checkout</h1>
+  <div mat-dialog-content>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Paid</mat-label>
+        <input matInput formControlName="paid" required>
+      </mat-form-field>
+    </div>
+    <div *ngIf="checkoutResponse != null">
+      <div class="row change" >
+        Change: {{checkoutResponse.change}}
+      </div>
+      <div class="row change" *ngFor="let change of convertMapToList()">
+        {{ 'currency.' + change.currency | translate }}: {{ change.value }}
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button color="primary" (click)="onSubmit()" [disabled]="isProcessDisabled()">Process</button>
+    <button mat-button color="primary" (click)="onNoClick()">Close</button>
+  </div>
+</form>

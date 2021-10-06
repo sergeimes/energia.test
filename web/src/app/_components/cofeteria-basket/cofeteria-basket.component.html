@@ -1,0 +1,11 @@
+<!-- Basket  -->
+<div id="basket"  *ngIf="items > 0">
+  <div id="total">In the basket: {{items}} item(s)</div>
+
+  <div id="basket_buttons">
+    <button type="button" class="btn btn-primary" (click)="basketCheckout()">Checkout</button>&nbsp;
+    <button type="button" class="btn btn-secondary" (click)="basketRest()">Reset</button>
+  </div>
+
+  <div id="sum">Total: {{total}} &euro;</div>
+</div>

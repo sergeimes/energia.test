@@ -1,0 +1,11 @@
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item">
+      <mat-form-field>
+        <select matNativeControl (change)="selectLanguage($event.target.value)">
+          <option value="{{ language.key }}" [selected]="isSelectedLanguage(language.key)" *ngFor="let language of languageOptions">{{ language.value | translate }}</option>
+        </select>
+      </mat-form-field>
+    </li>
+  </ul>
+</div>

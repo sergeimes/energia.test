@@ -1,0 +1,41 @@
+﻿<div class="example-header">
+  <mat-form-field>
+    <input matInput (keyup.enter)="applyFilter($event.target.value)" placeholder="Filter" [value]="filter">
+  </mat-form-field>
+</div>
+
+<div class="example-container mat-elevation-z8">
+
+  <mat-table #table [dataSource]="shopItemsDataSource" matSort (matSortChange)="applySort($event)" matSortActive="name"
+             matSortDirection="desc" matSortDisableClear>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+      <mat-cell *matCellDef="let row"> <a [routerLink]="" queryParamsHandling="preserve" (click)="openDialog(row)">{{row.name}}</a> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Price</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.price}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Quantity</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.quantity}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Image</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.image}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="donated">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Donated</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.donated}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5"></mat-paginator>
+</div>

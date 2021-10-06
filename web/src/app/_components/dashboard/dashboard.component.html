@@ -1,0 +1,20 @@
+﻿<div
+  class="card"
+  fxLayout="row wrap"
+  fxLayoutAlign="center"
+  fxLayoutGap="16px grid"
+>
+  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of items">
+    <a [routerLink]="" queryParamsHandling="preserve" (click)="addItemToBasket(item)">
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+          <mat-card-title>{{item.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="assets/{{item.image}}" [ngClass]="item.quantity > 0 ? '' : 'grayscale'" alt="{{item.name}}">
+        <mat-card-content>
+          {{item.price}} &euro;
+        </mat-card-content>
+      </mat-card>
+    </a>
+  </div>
+</div>

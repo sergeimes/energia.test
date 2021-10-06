@@ -1,0 +1,33 @@
+// Variables, Mixins
+@import "variables.less";
+@import "mixins.less";
+
+@import "typography.less";
+@import "navigation.less";
+@import "buttons.less";
+@import "badges_labels.less";
+@import "elements.less";
+@import "base.less";
+@import "cofeteria-pages.less";
+
+// Media query style
+@import "media.less";
+
+// Custom style
+// Your custom style to override base style
+@import "cofeteria-custom.less";
+
+// Clear layout on print mode
+@media print {
+  nav.navbar-static-side {
+    display: none;
+  }
+
+  body {
+    overflow: visible !important;
+  }
+
+  #page-wrapper {
+    margin: 0;
+  }
+}

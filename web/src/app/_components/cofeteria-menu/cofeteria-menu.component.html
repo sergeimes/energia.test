@@ -1,0 +1,30 @@
+<!-- Sidebar  -->
+<nav id="sidebar" [className]="menuService.sidebarClass">
+  <div class="sidebar-header">
+    <h3>
+      <div id="menu-logo"><img src="assets/java.com.svg"></div>
+    </h3>
+    <strong>CFT</strong>
+  </div>
+
+  <ul class="list-unstyled components">
+    <li class="active">
+      <a routerLink="/">
+        <i class="fas fa-home"></i>
+        Dashboard
+      </a>
+    </li>
+    <li ngbDropdown>
+      <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="isAdminMenuCollapsed = !isAdminMenuCollapsed"
+         [attr.aria-expanded]="!isAdminMenuCollapsed" aria-controls="adminMenuSubmenu">
+        <i class="fas fa-folder"></i>
+        Admin
+      </a>
+      <ul class="collapse list-unstyled" id="adminMenuSubmenu" [ngbCollapse]="!isAdminMenuCollapsed">
+        <li>
+          <a routerLink="admin/items">Shop items</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
